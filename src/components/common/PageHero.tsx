@@ -11,7 +11,7 @@ export function PageHero({
   breadcrumbItems: { label: string; href?: string }[];
 }) {
   return (
-    <section className="relative bg-ink-50 pt-28 pb-16 md:pt-36 md:pb-20">
+    <section className="relative bg-mocha-light pt-28 pb-16 md:pt-36 md:pb-20">
       <Container>
         <div className="mb-6">
           <Breadcrumb items={breadcrumbItems} />
@@ -20,7 +20,7 @@ export function PageHero({
           {title}
         </h1>
         {description && (
-          <p className="mt-4 text-base text-ink-400 animate-fade-in [animation-delay:100ms]">
+          <p className="mt-4 text-base text-ink-600 animate-fade-in [animation-delay:100ms]">
             {description}
           </p>
         )}

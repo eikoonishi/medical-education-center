@@ -38,7 +38,7 @@ export function HeroSection() {
         </h1>
 
         <div className="mt-6">
-          <p className="max-w-xl text-base leading-[2] text-ink-500 animate-fade-in [animation-delay:400ms]">
+          <p className="max-w-xl text-base leading-[2] text-ink-600 animate-fade-in [animation-delay:400ms]">
             医学教育推進センターは、エビデンスに基づく
             医学教育の実践と改革を通じて、
             未来の医療を担う人材を育成します。
