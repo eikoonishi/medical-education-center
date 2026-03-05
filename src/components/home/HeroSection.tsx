@@ -18,15 +18,15 @@ export function HeroSection() {
         {/* Large text overlay */}
         <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10 md:p-12 text-white z-10">
           <p className="text-[10px] sm:text-xs font-en tracking-[0.4em] opacity-70 mb-3 uppercase animate-fade-in">
-            Innovation in Education
+            Tohoku University School of Medicine
           </p>
-          <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-en font-bold tracking-wide leading-[0.95] animate-fade-in-up [animation-delay:100ms]">
-            TOHOKU
+          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-en font-bold tracking-wide leading-[1] animate-fade-in-up [animation-delay:100ms]">
+            OFFICE OF
             <br />
-            UNIVERSITY
+            MEDICAL EDUCATION
           </h2>
-          <p className="text-sm sm:text-xl md:text-2xl font-en font-light tracking-[0.2em] mt-2 sm:mt-3 opacity-80 animate-fade-in-up [animation-delay:200ms]">
-            Office of Medical Education
+          <p className="text-xs sm:text-base md:text-lg font-en font-light tracking-[0.15em] mt-2 sm:mt-3 opacity-70 animate-fade-in-up [animation-delay:200ms]">
+            医学教育推進センター
           </p>
         </div>
       </div>
