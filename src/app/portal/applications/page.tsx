@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { ExternalLink, FileText } from "lucide-react";
 import { PageHero } from "@/components/common/PageHero";
 import { Container } from "@/components/ui/Container";
-import { IllustrationPen } from "@/components/common/Illustrations";
 import { applicationForms } from "@/data/portal";
 
 export const metadata: Metadata = {
@@ -21,11 +20,7 @@ export default function ApplicationsPage() {
         ]}
       />
 
-      <section className="py-16 relative">
-        <div className="absolute right-12 top-12 hidden lg:block opacity-10">
-          <IllustrationPen className="w-20 h-20 text-copper" />
-        </div>
-
+      <section className="py-16">
         <Container>
           <div className="mb-8">
             <p className="text-base text-ink-500 leading-relaxed">

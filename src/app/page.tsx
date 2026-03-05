@@ -8,11 +8,11 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <SectionDivider variant="wave" />
+      <SectionDivider variant="line" />
       <OverviewSection />
       <SectionDivider variant="dots" />
       <NewsSection />
-      <SectionDivider variant="wave" />
+      <SectionDivider variant="line" />
       <BannerLinks />
     </>
   );

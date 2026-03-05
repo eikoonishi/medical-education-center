@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { MapPin, Calendar, Wrench, ExternalLink } from "lucide-react";
 import { PageHero } from "@/components/common/PageHero";
 import { Container } from "@/components/ui/Container";
-import { IllustrationStethoscope } from "@/components/common/Illustrations";
 import { skillsLabExamples } from "@/data/portal";
 
 export const metadata: Metadata = {
@@ -21,11 +20,7 @@ export default function SkillsLabPage() {
         ]}
       />
 
-      <section className="py-16 relative">
-        <div className="absolute right-12 top-12 hidden lg:block opacity-10">
-          <IllustrationStethoscope className="w-20 h-20 text-copper" />
-        </div>
-
+      <section className="py-16">
         <Container>
           {/* 施設案内 */}
           <div className="mb-12">
@@ -90,7 +85,7 @@ export default function SkillsLabPage() {
                       <p className="text-base text-ink-700 mb-3 leading-relaxed">
                         {activity.description}
                       </p>
-                      <div className="rounded-xl bg-cafe-warm/50 p-4">
+                      <div className="rounded-xl bg-ink-50 p-4">
                         <p className="text-sm text-ink-500 leading-relaxed">
                           <span className="font-medium text-ink-600">
                             使用機材：

@@ -17,14 +17,7 @@ import {
 } from "lucide-react";
 import { PageHero } from "@/components/common/PageHero";
 import { Container } from "@/components/ui/Container";
-import {
-  IllustrationDots,
-  IllustrationSparkle,
-  IllustrationCoffee,
-  IllustrationHeart,
-  IllustrationClipboard,
-  IllustrationSpeechBubble,
-} from "@/components/common/Illustrations";
+import { MessageCircle } from "lucide-react";
 import {
   portalNews,
   portalCategoryLabels,
@@ -85,12 +78,7 @@ export default function PortalPage() {
         breadcrumbItems={[{ label: "ポータル" }]}
       />
 
-      <section className="py-16 relative">
-        {/* Decorative */}
-        <div className="absolute right-12 top-12 hidden lg:block opacity-10">
-          <IllustrationSparkle className="w-20 h-20 text-copper" />
-        </div>
-
+      <section className="py-16">
         <Container>
           {/* ─── コンテンツ ─── */}
           <div className="mb-14">
@@ -220,7 +208,7 @@ export default function PortalPage() {
                     className="group block rounded-2xl border border-ink-200/60 bg-white p-6 transition-all hover:-translate-y-0.5 hover:shadow-md hover:border-copper/30"
                   >
                     <div className="flex items-center gap-3 mb-2">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-cafe-warm">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-ink-50">
                         {res.id === "res1" ? (
                           <Notebook className="h-5 w-5 text-copper" />
                         ) : (
@@ -249,16 +237,13 @@ export default function PortalPage() {
           </div>
 
           {/* ─── 教育の支援をします ─── */}
-          <div className="mt-14 relative">
-            <div className="absolute -right-4 -top-4 hidden lg:block opacity-10">
-              <IllustrationHeart className="w-16 h-16 text-terracotta" />
-            </div>
+          <div className="mt-14">
             <h2 className="mb-6 flex items-center gap-3 text-2xl font-bold text-ink-900">
               <span className="h-6 w-1 rounded-full bg-copper" />
               <HeartHandshake className="h-5 w-5 text-copper" />
               教育の支援をします
             </h2>
-            <div className="rounded-2xl border border-copper/20 bg-cafe-warm/50 p-8">
+            <div className="rounded-2xl border border-ink-200 bg-ink-50 p-8">
               <p className="text-base text-ink-700 mb-4">
                 教員の先生方の教育支援を行います。
               </p>
@@ -279,7 +264,7 @@ export default function PortalPage() {
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-full bg-copper px-6 py-2.5 text-sm font-bold text-white hover:bg-copper/90 transition-colors"
               >
-                <IllustrationSpeechBubble className="w-4 h-4" />
+                <MessageCircle className="w-4 h-4" />
                 お問い合わせ
               </Link>
             </div>

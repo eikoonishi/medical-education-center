@@ -75,7 +75,7 @@
 }
 
 body {
-  background-color: #faf9f7;
+  background-color: #ffffff;
   color: var(--color-ink-900);
   font-family: var(--font-sans);
   line-height: 1.8;
@@ -98,29 +98,7 @@ html {
 .hero-bg {
   background-image: url('/images/hero-students.png');
   background-repeat: no-repeat;
-  background-size: 300%;
-  background-position: 50% 14%;
+  background-size: cover;
+  background-position: center center;
 }
 
-@media (min-width: 640px) {
-  .hero-bg {
-    background-size: 220%;
-    background-position: 50% 16%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero-bg {
-    background-size: 200%;
-    background-position: 50% 18%;
-  }
-}
-
-/* Hand-drawn underline effect */
-.hand-underline {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 8' fill='none'%3E%3Cpath d='M2 5 C40 2, 80 6, 120 3 C160 1, 180 5, 198 4' stroke='%23c26d53' stroke-width='2' stroke-linecap='round' opacity='0.3'/%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  background-position: bottom;
-  background-size: 200px 8px;
-  padding-bottom: 4px;
-}

@@ -3,7 +3,6 @@ import { PageHero } from "@/components/common/PageHero";
 import { Container } from "@/components/ui/Container";
 import { StaffCard } from "@/components/staff/StaffCard";
 import { staffGroups } from "@/data/staff";
-import { IllustrationPeople } from "@/components/common/Illustrations";
 
 export const metadata: Metadata = {
   title: "スタッフ紹介",
@@ -17,12 +16,7 @@ export default function StaffPage() {
         description="医学教育推進センターのメンバー"
         breadcrumbItems={[{ label: "スタッフ紹介" }]}
       />
-      <section className="py-16 relative">
-        {/* Decorative illustration */}
-        <div className="absolute right-12 top-12 hidden lg:block opacity-10">
-          <IllustrationPeople className="w-20 h-20 text-copper" />
-        </div>
-
+      <section className="py-16">
         <Container>
           {staffGroups.map((group) => (
             <div key={group.groupTitle} className="mb-12 last:mb-0">

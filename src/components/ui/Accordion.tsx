@@ -24,7 +24,7 @@ export function Accordion({
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
           "flex w-full items-center justify-between gap-4 p-5 text-left transition-colors",
-          isOpen ? "bg-cafe-warm" : "hover:bg-cafe-base"
+          isOpen ? "bg-ink-50" : "hover:bg-ink-50/50"
         )}
       >
         <div className="flex items-center gap-3">

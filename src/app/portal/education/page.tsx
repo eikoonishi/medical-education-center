@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { ExternalLink, Play } from "lucide-react";
 import { PageHero } from "@/components/common/PageHero";
 import { Container } from "@/components/ui/Container";
-import { IllustrationLightbulb } from "@/components/common/Illustrations";
 import { educationPresentations } from "@/data/portal";
 
 export const metadata: Metadata = {
@@ -35,11 +34,7 @@ export default function EducationPage() {
         ]}
       />
 
-      <section className="py-16 relative">
-        <div className="absolute right-12 top-12 hidden lg:block opacity-10">
-          <IllustrationLightbulb className="w-20 h-20 text-copper" />
-        </div>
-
+      <section className="py-16">
         <Container>
           <div className="mb-10">
             <h2 className="mb-4 flex items-center gap-3 text-2xl font-bold text-ink-900">

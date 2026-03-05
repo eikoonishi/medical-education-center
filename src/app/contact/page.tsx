@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { MapPin, Phone, Printer, Mail, Clock } from "lucide-react";
 import { PageHero } from "@/components/common/PageHero";
 import { Container } from "@/components/ui/Container";
-import { IllustrationSpeechBubble } from "@/components/common/Illustrations";
 
 export const metadata: Metadata = {
   title: "お問い合わせ",
@@ -60,7 +59,7 @@ export default function ContactPage() {
                     key={info.label}
                     className="flex items-start gap-4 rounded-xl border border-ink-200/60 bg-white p-5"
                   >
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-cafe-warm">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-ink-50">
                       <info.icon className="h-5 w-5 text-copper" />
                     </div>
                     <div>

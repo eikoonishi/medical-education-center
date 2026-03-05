@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { ExternalLink, Activity, BarChart3, Target } from "lucide-react";
 import { PageHero } from "@/components/common/PageHero";
 import { Container } from "@/components/ui/Container";
-import { IllustrationDNA } from "@/components/common/Illustrations";
 
 export const metadata: Metadata = {
   title: "スキルスコープ",
@@ -41,11 +40,7 @@ export default function SkillscopePage() {
         ]}
       />
 
-      <section className="py-16 relative">
-        <div className="absolute right-12 top-12 hidden lg:block opacity-10">
-          <IllustrationDNA className="w-20 h-20 text-copper" />
-        </div>
-
+      <section className="py-16">
         <Container>
           {/* 特徴 */}
           <div className="mb-12">

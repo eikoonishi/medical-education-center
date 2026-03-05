@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { ExternalLink, AlertTriangle, Monitor, CheckCircle } from "lucide-react";
 import { PageHero } from "@/components/common/PageHero";
 import { Container } from "@/components/ui/Container";
-import { IllustrationClipboard } from "@/components/common/Illustrations";
 
 export const metadata: Metadata = {
   title: "欠席・遅刻管理アプリ",
@@ -45,11 +44,7 @@ export default function AttendancePage() {
         ]}
       />
 
-      <section className="py-16 relative">
-        <div className="absolute right-12 top-12 hidden lg:block opacity-10">
-          <IllustrationClipboard className="w-20 h-20 text-copper" />
-        </div>
-
+      <section className="py-16">
         <Container>
           {/* 概要 */}
           <div className="mb-10">

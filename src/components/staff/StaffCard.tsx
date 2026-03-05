@@ -20,7 +20,7 @@ export function StaffCard({
     >
       <div
         className={cn(
-          "flex items-center justify-center rounded-full bg-cafe-warm shrink-0",
+          "flex items-center justify-center rounded-full bg-ink-50 shrink-0",
           featured ? "h-28 w-28" : "mx-auto mb-4 h-20 w-20"
         )}
       >
