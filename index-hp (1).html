@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>東北大学医学教育推進センター | Tohoku University Office of Medical Education</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts: 'Jost' for English headings (Modern/Clean), 'Zen Kaku Gothic New' for Japanese (Readable/Soft) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cafe-white': '#ffffff',
+                        'cafe-base': '#f9f9f7', // ほんのり温かいグレーベージュ
+                        'accent-copper': '#b07d62', // 落ち着いたコッパー
+                        'accent-terracotta': '#c26d53', // テラコッタ
+                        'text-primary': '#333333',
+                        'text-secondary': '#666666',
+                    },
+                    fontFamily: {
+                        en: ['Jost', 'sans-serif'],
+                        jp: ['Zen Kaku Gothic New', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0,0,0,0.05)',
+                        'hover': '0 20px 40px -10px rgba(194, 109, 83, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Zen Kaku Gothic New', sans-serif;
+            background-color: #fcfcfc;
+            color: #333;
+            line-height: 1.8;
+        }
+        
+        .font-en { font-family: 'Jost', sans-serif; }
+        
+        /* Navigation Hover Effect */
+        .nav-item {
+            position: relative;
+        }
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: #c26d53;
+            transition: width 0.3s ease;
+        }
+        .nav-item:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Image Overlay Gradient */
+        .hero-gradient {
+            background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 40%);
+        }
+
+        /* Card Hover Animation */
+        .resource-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <!-- Navigation (Fixed) -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-stone-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo Area -->
+                <a href="#" class="group flex flex-col justify-center h-full">
+                    <h1 class="text-lg md:text-xl font-bold tracking-widest text-text-primary group-hover:text-accent-terracotta transition-colors duration-300">
+                        東北大学医学教育推進センター
+                    </h1>
+                    <p class="text-[10px] font-en tracking-[0.2em] text-accent-copper mt-1 uppercase">
+                        Tohoku University School of Medicine<br>Office of Medical Education
+                    </p>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-10 text-sm font-medium text-text-secondary items-center">
+                    <!-- Dropdown for About -->
+                    <div class="relative group h-full flex items-center">
+                        <button class="nav-item flex items-center gap-1 py-2 hover:text-accent-terracotta transition">
+                            センターについて <i data-lucide="chevron-down" class="w-3 h-3"></i>
+                        </button>
+                        <div class="absolute top-full right-0 mt-2 w-64 bg-white border border-stone-50 shadow-soft rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-right overflow-hidden">
+                            <a href="#message" class="block px-6 py-3 hover:bg-cafe-base text-xs text-text-secondary hover:text-accent-terracotta transition">田中教授からのメッセージ</a>
+                            <a href="#work" class="block px-6 py-3 hover:bg-cafe-base text-xs text-text-secondary hover:text-accent-terracotta transition">センターの仕事</a>
+                            <a href="#staff" class="block px-6 py-3 hover:bg-cafe-base text-xs text-text-secondary hover:text-accent-terracotta transition">スタッフ紹介</a>
+                            <a href="#achievements" class="block px-6 py-3 hover:bg-cafe-base text-xs text-text-secondary hover:text-accent-terracotta transition">研究業績</a>
+                            <a href="#logo" class="block px-6 py-3 hover:bg-cafe-base text-xs text-text-secondary hover:text-accent-terracotta transition">ロゴマークについて</a>
+                        </div>
+                    </div>
+
+                    <a href="https://sites.google.com/tohoku.ac.jp/medical-portal" target="_blank" class="nav-item hover:text-accent-terracotta transition flex items-center gap-1">
+                        教員向け <i data-lucide="lock" class="w-3 h-3"></i>
+                    </a>
+                    
+                    <a href="#" class="nav-item hover:text-accent-terracotta transition text-gray-400 cursor-not-allowed" title="準備中">
+                        学生・研修医向け
+                    </a>
+
+                    <a href="https://forms.gle/placeholder" target="_blank" class="ml-4 px-6 py-2.5 bg-text-primary text-white text-xs tracking-widest rounded-full hover:bg-accent-terracotta transition-colors shadow-lg">
+                        CONTACT
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 text-text-primary" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden absolute top-24 left-0 w-full bg-white border-b border-stone-100 p-6 flex flex-col space-y-4 md:hidden shadow-xl">
+            <a href="#" class="text-sm font-bold text-text-primary">センターについて</a>
+            <a href="https://sites.google.com/tohoku.ac.jp/medical-portal" class="text-sm font-bold text-text-primary">教員向け（学内限定）</a>
+            <a href="#" class="text-sm font-bold text-gray-400">学生・研修医向け（準備中）</a>
+            <a href="https://forms.gle/placeholder" class="text-sm font-bold text-accent-terracotta">お問い合わせ</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-32 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <div class="relative w-full h-[500px] rounded-[3rem] overflow-hidden shadow-soft group">
+            <!-- Image: Hands, Books, Laptop, Plants, Soft Light (No Faces) -->
+            <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=2000&auto=format&fit=crop" 
+                 alt="Students studying at a wooden desk with medical books and laptop" 
+                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-80"></div>
+
+            <!-- Hero Text (Bottom Right) -->
+            <div class="absolute bottom-8 right-8 md:bottom-12 md:right-12 text-right text-white z-10">
+                <p class="text-xs md:text-sm font-en tracking-[0.3em] opacity-90 mb-2 uppercase">Innovation in Education</p>
+                <h2 class="text-2xl md:text-4xl font-en font-medium tracking-widest leading-tight">
+                    TOHOKU UNIVERSITY<br>
+                    SCHOOL OF MEDICINE<br>
+                    <span class="font-light">OFFICE OF MEDICAL EDUCATION</span>
+                </h2>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-24">
+
+        <!-- News & Topics -->
+        <section>
+            <div class="flex items-end justify-between mb-8 border-b border-stone-200 pb-4">
+                <div>
+                    <span class="text-[10px] font-en tracking-[0.2em] text-accent-copper font-bold block mb-1">UPDATES</span>
+                    <h3 class="text-2xl font-bold text-text-primary tracking-wide">News & Topics</h3>
+                </div>
+                <a href="#" class="text-xs text-text-secondary hover:text-accent-terracotta transition flex items-center gap-1">
+                    一覧を見る <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                </a>
+            </div>
+
+            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                <!-- News Item 1 -->
+                <article class="group cursor-pointer">
+                    <div class="mb-3">
+                        <span class="text-[10px] bg-accent-terracotta/10 text-accent-terracotta px-2 py-1 rounded tracking-wider font-bold">NEWS</span>
+                        <span class="text-xs text-gray-400 ml-2 font-en">2025.04.01</span>
+                    </div>
+                    <h4 class="text-sm font-medium leading-relaxed group-hover:text-accent-terracotta transition-colors line-clamp-2">
+                        令和7年度 医学教育推進センターの新体制についてのお知らせ
+                    </h4>
+                </article>
+                <!-- News Item 2 -->
+                <article class="group cursor-pointer">
+                    <div class="mb-3">
+                        <span class="text-[10px] bg-accent-copper/10 text-accent-copper px-2 py-1 rounded tracking-wider font-bold">EVENT</span>
+                        <span class="text-xs text-gray-400 ml-2 font-en">2025.03.15</span>
+                    </div>
+                    <h4 class="text-sm font-medium leading-relaxed group-hover:text-accent-terracotta transition-colors line-clamp-2">
+                        【開催報告】第42回 医学教育ワークショップを開催しました
+                    </h4>
+                </article>
+                <!-- News Item 3 -->
+                <article class="group cursor-pointer">
+                    <div class="mb-3">
+                        <span class="text-[10px] bg-gray-100 text-gray-600 px-2 py-1 rounded tracking-wider font-bold">UPDATE</span>
+                        <span class="text-xs text-gray-400 ml-2 font-en">2025.03.01</span>
+                    </div>
+                    <h4 class="text-sm font-medium leading-relaxed group-hover:text-accent-terracotta transition-colors line-clamp-2">
+                        教員向けポータルサイトのコンテンツ（CBT分析資料）を更新しました
+                    </h4>
+                </article>
+                <!-- News Item 4 -->
+                <article class="group cursor-pointer">
+                    <div class="mb-3">
+                        <span class="text-[10px] bg-gray-100 text-gray-600 px-2 py-1 rounded tracking-wider font-bold">OTHER</span>
+                        <span class="text-xs text-gray-400 ml-2 font-en">2025.02.20</span>
+                    </div>
+                    <h4 class="text-sm font-medium leading-relaxed group-hover:text-accent-terracotta transition-colors line-clamp-2">
+                        Webサイトをリニューアルオープンいたしました
+                    </h4>
+                </article>
+            </div>
+        </section>
+
+        <!-- Resources / Links Grid -->
+        <section>
+            <div class="text-center mb-12">
+                <span class="text-[10px] font-en tracking-[0.4em] text-accent-copper font-bold block mb-2">DISCOVER</span>
+                <h3 class="text-3xl font-bold text-text-primary tracking-wider">Educational Resources</h3>
+                <p class="text-xs text-gray-400 mt-4 tracking-widest">医学教育を深めるためのリソースとリンク</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- 1. Prof Tanaka's Site -->
+                <a href="#" class="resource-card bg-white p-8 rounded-3xl border border-stone-100 shadow-soft hover:shadow-hover group h-full flex flex-col relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-accent-copper/5 rounded-bl-[4rem] -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
+                    <div class="mb-6 text-accent-copper">
+                        <i data-lucide="user" class="w-8 h-8 stroke-1"></i>
+                    </div>
+                    <h4 class="text-lg font-bold mb-2 text-text-primary group-hover:text-accent-copper transition">医学教育を知りたい方へ</h4>
+                    <p class="text-xs text-text-secondary leading-relaxed mb-4">田中教授による医学教育の哲学と実践知。</p>
+                    <span class="mt-auto text-[10px] font-en font-bold text-accent-copper flex items-center gap-1">VISIT SITE <i data-lucide="arrow-up-right" class="w-3 h-3"></i></span>
+                </a>
+
+                <!-- 2. Dr. Kakisaka's Video -->
+                <a href="#" class="resource-card bg-white p-8 rounded-3xl border border-stone-100 shadow-soft hover:shadow-hover group h-full flex flex-col relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-accent-terracotta/5 rounded-bl-[4rem] -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
+                    <div class="mb-6 text-accent-terracotta">
+                        <i data-lucide="video" class="w-8 h-8 stroke-1"></i>
+                    </div>
+                    <h4 class="text-lg font-bold mb-2 text-text-primary group-hover:text-accent-terracotta transition">柿坂先生の動画サイト</h4>
+                    <p class="text-xs text-text-secondary leading-relaxed mb-4">診療参加型臨床実習のための動画ライブラリ。</p>
+                    <span class="mt-auto text-[10px] font-en font-bold text-accent-terracotta flex items-center gap-1">WATCH VIDEOS <i data-lucide="arrow-up-right" class="w-3 h-3"></i></span>
+                </a>
+
+                <!-- 3. Portal (Internal) -->
+                <a href="https://sites.google.com/tohoku.ac.jp/medical-portal" class="resource-card bg-stone-800 p-8 rounded-3xl border border-stone-800 shadow-soft hover:shadow-lg group h-full flex flex-col relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-bl-[4rem] -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
+                    <div class="mb-6 text-white">
+                        <i data-lucide="lock" class="w-8 h-8 stroke-1"></i>
+                    </div>
+                    <h4 class="text-lg font-bold mb-2 text-white">医学教育ポータルサイト</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-4">学内限定。カリキュラム、評価データなど。</p>
+                    <span class="mt-auto text-[10px] font-en font-bold text-white flex items-center gap-1">TEACHERS ONLY <i data-lucide="arrow-up-right" class="w-3 h-3"></i></span>
+                </a>
+
+                <!-- 4. Columns -->
+                <a href="#" class="resource-card bg-white p-8 rounded-3xl border border-stone-100 shadow-soft hover:shadow-hover group h-full flex flex-col relative overflow-hidden">
+                    <div class="mb-6 text-gray-400 group-hover:text-accent-copper transition">
+                        <i data-lucide="pen-tool" class="w-8 h-8 stroke-1"></i>
+                    </div>
+                    <h4 class="text-lg font-bold mb-2 text-text-primary">コラム</h4>
+                    <p class="text-xs text-text-secondary leading-relaxed mb-4">教育現場からの気づきや、最新のトピック。</p>
+                    <span class="mt-auto text-[10px] font-en font-bold text-gray-400 group-hover:text-accent-copper flex items-center gap-1">READ MORE <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
+                </a>
+
+                <!-- 5. Student Info -->
+                <a href="#" class="resource-card bg-white p-8 rounded-3xl border border-stone-100 shadow-soft hover:shadow-hover group h-full flex flex-col relative overflow-hidden">
+                    <div class="mb-6 text-gray-400 group-hover:text-accent-terracotta transition">
+                        <i data-lucide="graduation-cap" class="w-8 h-8 stroke-1"></i>
+                    </div>
+                    <h4 class="text-lg font-bold mb-2 text-text-primary">学生・研修医向け情報</h4>
+                    <p class="text-xs text-text-secondary leading-relaxed mb-4">学習リソースやキャリア支援情報（準備中）。</p>
+                    <span class="mt-auto text-[10px] font-en font-bold text-gray-400 group-hover:text-accent-terracotta flex items-center gap-1">COMING SOON <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
+                </a>
+
+                <!-- 6. Links -->
+                <a href="#" class="resource-card bg-white p-8 rounded-3xl border border-stone-100 shadow-soft hover:shadow-hover group h-full flex flex-col relative overflow-hidden">
+                    <div class="mb-6 text-gray-400">
+                        <i data-lucide="link" class="w-8 h-8 stroke-1"></i>
+                    </div>
+                    <h4 class="text-lg font-bold mb-2 text-text-primary">リンク集</h4>
+                    <p class="text-xs text-text-secondary leading-relaxed mb-4">東北大学医学部、関連学会などへのリンク。</p>
+                    <span class="mt-auto text-[10px] font-en font-bold text-gray-400 flex items-center gap-1">VIEW LINKS <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-stone-100 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-12">
+                
+                <!-- Address / Contact -->
+                <div class="md:w-1/2">
+                    <h5 class="text-lg font-bold text-text-primary mb-6">東北大学大学院医学系研究科<br>医学教育推進センター</h5>
+                    <p class="text-xs text-text-secondary leading-relaxed tracking-wider mb-6">
+                        〒980-8575<br>
+                        宮城県仙台市青葉区星陵町2-1<br>
+                        医学部1号館
+                    </p>
+                    <a href="https://forms.gle/placeholder" target="_blank" class="inline-flex items-center px-6 py-3 border border-stone-200 rounded-full text-xs font-bold tracking-widest text-text-primary hover:bg-text-primary hover:text-white transition group">
+                        <i data-lucide="mail" class="w-4 h-4 mr-2"></i> お問い合わせフォーム
+                    </a>
+                </div>
+
+                <!-- Footer Nav -->
+                <div class="md:w-1/2 flex flex-col md:items-end">
+                    <div class="flex space-x-8 text-xs font-bold text-gray-400 tracking-widest mb-8 font-en">
+                        <a href="#" class="hover:text-accent-copper transition">HOME</a>
+                        <a href="#" class="hover:text-accent-copper transition">ABOUT</a>
+                        <a href="#" class="hover:text-accent-copper transition">PORTAL</a>
+                        <a href="#" class="hover:text-accent-copper transition">CONTACT</a>
+                    </div>
+                    <p class="text-[10px] text-gray-300 font-en tracking-widest">
+                        © 2025 Office of Medical Education, Tohoku University.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Icons initialization
+        lucide.createIcons();
+    </script>
+</body>
+</html>

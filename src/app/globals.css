@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Warm copper/terracotta accents - from Gemini demo */
+  --color-copper: #b07d62;
+  --color-copper-light: #c99b7e;
+  --color-copper-dark: #8f6247;
+  --color-terracotta: #c26d53;
+  --color-terracotta-light: #d48d78;
+  --color-terracotta-dark: #a05540;
+
+  /* Iolite kept for logo/secondary use */
+  --color-iolite-50: #EEF3F8;
+  --color-iolite-100: #D4E0EE;
+  --color-iolite-200: #A8C1DD;
+  --color-iolite-300: #7BA2CC;
+  --color-iolite-400: #4E83BB;
+  --color-iolite-500: #20528F;
+  --color-iolite-600: #1A4377;
+  --color-iolite-700: #14345E;
+  --color-iolite-800: #0E2546;
+  --color-iolite-900: #08162E;
+
+  /* Backgrounds */
+  --color-cafe-base: #f9f9f7;
+  --color-cafe-warm: #f5f0ea;
+  --color-cream: #FAF7F2;
+  --color-cream-dark: #F0EBE3;
+
+  /* Neutral ink tones */
+  --color-ink-900: #333333;
+  --color-ink-800: #444444;
+  --color-ink-700: #555555;
+  --color-ink-600: #666666;
+  --color-ink-500: #888888;
+  --color-ink-400: #999999;
+  --color-ink-300: #bbbbbb;
+  --color-ink-200: #dddddd;
+  --color-ink-100: #eeeeee;
+  --color-ink-50: #f5f5f5;
+
+  /* Stone warm tones */
+  --color-stone-800: #44403c;
+
+  /* Fonts */
+  --font-sans: var(--font-zen-kaku), "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  --font-en: 'Jost', sans-serif;
+
+  /* Animations */
+  --animate-fade-in: fade-in 0.6s ease both;
+  --animate-fade-in-up: fade-in-up 0.6s ease both;
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-wiggle: wiggle 2s ease-in-out infinite;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  75% { transform: rotate(-3deg); }
+}
+
+body {
+  background-color: #faf9f7;
+  color: var(--color-ink-900);
+  font-family: var(--font-sans);
+  line-height: 1.8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: var(--color-copper-light);
+  color: white;
+}
+
+.font-en {
+  font-family: var(--font-en);
+}
+
+/* Hero background image - responsive sizing */
+.hero-bg {
+  background-image: url('/images/hero-students.png');
+  background-repeat: no-repeat;
+  background-size: 300%;
+  background-position: 50% 14%;
+}
+
+@media (min-width: 640px) {
+  .hero-bg {
+    background-size: 220%;
+    background-position: 50% 16%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-bg {
+    background-size: 200%;
+    background-position: 50% 18%;
+  }
+}
+
+/* Hand-drawn underline effect */
+.hand-underline {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 8' fill='none'%3E%3Cpath d='M2 5 C40 2, 80 6, 120 3 C160 1, 180 5, 198 4' stroke='%23c26d53' stroke-width='2' stroke-linecap='round' opacity='0.3'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-size: 200px 8px;
+  padding-bottom: 4px;
+}
