@@ -16,17 +16,17 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
 
         {/* Large text overlay */}
-        <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10 md:p-12 text-white z-10">
-          <p className="text-[10px] sm:text-xs font-en tracking-[0.3em] opacity-60 mb-4 uppercase animate-fade-in">
-            Innovation in Education
-          </p>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-en font-bold tracking-wide leading-[1.05] animate-fade-in-up [animation-delay:100ms]">
+        <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10 md:p-12 text-white z-10 text-center">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-en font-bold tracking-wider leading-[1.1] animate-fade-in-up [animation-delay:100ms]">
             TOHOKU UNIVERSITY
             <br />
             SCHOOL OF MEDICINE
           </h2>
-          <p className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-en font-medium tracking-wide leading-[1.05] mt-1 sm:mt-2 opacity-90 animate-fade-in-up [animation-delay:200ms]">
+          <p className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-en font-light tracking-[0.15em] leading-[1.1] mt-2 sm:mt-3 opacity-90 animate-fade-in-up [animation-delay:200ms]">
             OFFICE OF MEDICAL EDUCATION
+          </p>
+          <p className="text-xs sm:text-sm md:text-base tracking-[0.3em] mt-3 sm:mt-4 opacity-60 animate-fade-in [animation-delay:300ms]">
+            東北大学医学教育推進センター
           </p>
         </div>
       </div>
