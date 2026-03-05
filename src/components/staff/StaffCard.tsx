@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import type { StaffMember } from "@/types";
 import { User } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -9,28 +11,52 @@ export function StaffCard({
   member: StaffMember;
   featured?: boolean;
 }) {
-  return (
+  const hasProfile =
+    member.qualifications ||
+    member.career ||
+    member.societies ||
+    member.awards ||
+    member.links;
+
+  const card = (
     <div
       className={cn(
-        "rounded-xl border border-ink-200/60 bg-white overflow-hidden",
+        "rounded-xl border border-ink-200/60 bg-white overflow-hidden transition-all duration-200",
+        hasProfile && "hover:border-ink-300 hover:shadow-md cursor-pointer",
         featured
           ? "flex flex-col sm:flex-row items-center gap-6 p-8"
           : "p-6 text-center"
       )}
     >
-      <div
-        className={cn(
-          "flex items-center justify-center rounded-full bg-ink-50 shrink-0",
-          featured ? "h-28 w-28" : "mx-auto mb-4 h-20 w-20"
-        )}
-      >
-        <User
+      {member.imageUrl ? (
+        <div
           className={cn(
-            "text-iolite-300",
-            featured ? "h-12 w-12" : "h-8 w-8"
+            "relative rounded-lg overflow-hidden shrink-0",
+            featured ? "h-28 w-28" : "mx-auto mb-4 h-24 w-24"
           )}
-        />
-      </div>
+        >
+          <Image
+            src={member.imageUrl}
+            alt={member.name}
+            fill
+            className="object-cover object-top"
+          />
+        </div>
+      ) : (
+        <div
+          className={cn(
+            "flex items-center justify-center rounded-lg bg-ink-50 shrink-0",
+            featured ? "h-28 w-28" : "mx-auto mb-4 h-24 w-24"
+          )}
+        >
+          <User
+            className={cn(
+              "text-iolite-300",
+              featured ? "h-12 w-12" : "h-8 w-8"
+            )}
+          />
+        </div>
+      )}
 
       <div className={cn(featured && "text-left")}>
         <h3
@@ -52,7 +78,16 @@ export function StaffCard({
             専門: {member.specialty}
           </p>
         )}
+        {hasProfile && (
+          <p className="mt-2 text-xs text-copper">詳細を見る →</p>
+        )}
       </div>
     </div>
   );
+
+  if (hasProfile) {
+    return <Link href={`/staff/${member.id}`}>{card}</Link>;
+  }
+
+  return card;
 }
